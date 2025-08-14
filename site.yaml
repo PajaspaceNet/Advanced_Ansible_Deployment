@@ -1,0 +1,5 @@
+---
+- hosts: appservers
+  serial: 2
+  roles:
+    - flask_app

@@ -1,0 +1,42 @@
+---
+# Hlavní úkoly pro Flask aplikaci
+
+- name: Gather custom facts
+  include_tasks: facts.yaml
+
+- name: Install common packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop: "{{ packages_common }}"
+  become: true
+
+- name: Ensure flask user exists
+  user:
+    name: flask
+    state: present
+    create_home: yes
+
+- name: Deploy Flask app
+  git:
+    repo: "{{ flask_repo }}"
+    dest: /opt/flask_app
+    version: "{{ flask_version }}"
+  become: true
+  notify: Restart Flask
+
+- name: Configure Flask systemd service
+  template:
+    src: flask_app.service.j2
+    dest: /etc/systemd/system/flask_app.service
+    mode: '0644'
+  become: true
+  notify: Restart Flask
+
+- name: Enable and start Flask service
+  systemd:
+    name: flask_app
+    enabled: yes
+    state: started
+  become: true

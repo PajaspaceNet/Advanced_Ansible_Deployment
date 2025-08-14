@@ -1,0 +1,15 @@
+---
+- name: Gather memory info
+  ansible.builtin.set_fact:
+    total_ram_gb: "{{ ansible_memtotal_mb | int // 1024 }}"
+
+- name: Determine number of Flask workers based on RAM
+  ansible.builtin.set_fact:
+    flask_workers: >
+      {% if total_ram_gb >= 16 %}
+        4
+      {% elif total_ram_gb >= 8 %}
+        2
+      {% else %}
+        1
+      {% endif %}

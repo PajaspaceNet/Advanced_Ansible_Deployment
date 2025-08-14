@@ -38,3 +38,19 @@ ansible_project_advanced/
 ## Požadavky
 - Ansible 2.9+
 - Python 3 na cílových serverech
+
+
+## TODO / Possible Improvements
+
+Projekt obsahuje pokročilou Ansible strukturu pro nasazení Flask aplikace.  
+Aktuálně zahrnuje:
+- Rolling deploy
+- Role
+- Šablony
+- Handlers
+- Ansible Vault
+
+V budoucnu je možné rozšířit:
+- Monitoringem (Grafana/Prometheus)
+- Alerty a notifikace
+

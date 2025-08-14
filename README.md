@@ -19,7 +19,7 @@ ansible-playbook -i inventory site.yaml
 
 ## Struktura
 ```
-super_ansible_project_advanced/
+ansible_project_advanced/
 ├── site.yaml
 ├── group_vars/
 │   └── all.yaml

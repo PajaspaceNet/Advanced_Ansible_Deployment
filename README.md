@@ -20,21 +20,6 @@ ansible-playbook -i inventory site.yaml
 ## Struktura
 ```
 ansible_project_advanced/
-├── site.yaml
-├── group_vars/
-│   └── all.yaml
-└── roles/
-    └── flask_app/
-        ├── tasks/
-        │   ├── main.yaml
-        │   └── facts.yaml
-        ├── handlers/
-        │   └── main.yaml
-        └── templates/
-            └── flask_app.service.j2
-
-
-super_ansible_project_advanced/
 ├── site.yaml                  # Hlavní playbook – spouští roli flask_app s rolling deploy (serial: 2)
 ├── group_vars/
 │   └── all.yaml               # Globální proměnné – balíčky, Git repo, verze aplikace
@@ -47,7 +32,6 @@ super_ansible_project_advanced/
         │   └── main.yaml      # Handlery – restart Flask aplikace jen při změně
         └── templates/
             └── flask_app.service.j2  # Jinja2 šablona pro systemd jednotku
-
 
 ```
 

@@ -1,4 +1,4 @@
-# Super Advanced Ansible Project
+# Advanced Ansible Project
 
 Tento projekt ukazuje **advanced** nasazení Flask aplikace pomocí Ansible.
 

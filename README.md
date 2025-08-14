@@ -19,18 +19,20 @@ ansible-playbook -i inventory site.yaml
 
 ## Struktura
 ```
-roles/
-  flask_app/
-    tasks/
-      main.yaml
-      facts.yaml
-    handlers/
-      main.yaml
-    templates/
-      flask_app.service.j2
-group_vars/
-  all.yaml
-site.yaml
+super_ansible_project_advanced/
+├── site.yaml
+├── group_vars/
+│   └── all.yaml
+└── roles/
+    └── flask_app/
+        ├── tasks/
+        │   ├── main.yaml
+        │   └── facts.yaml
+        ├── handlers/
+        │   └── main.yaml
+        └── templates/
+            └── flask_app.service.j2
+
 ```
 
 ## Požadavky

@@ -26,7 +26,7 @@ ansible_project_advanced/
 └── roles/
     └── flask_app/
         ├── tasks/
-        │   ├── main.yaml      # Hlavní úkoly: instalace, nasazení, systemd, start služby
+        │   ├── main.yaml   # Hlavní úkoly: instalace, nasazení, systemd, start služby
         │   └── facts.yaml     # Custom facts – počet workerů podle RAM
         ├── handlers/
         │   └── main.yaml      # Handlery – restart Flask aplikace jen při změně
